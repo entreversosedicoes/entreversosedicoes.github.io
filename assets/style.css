@@ -523,14 +523,20 @@ cite {
 }
 
 
-/* Atualização de agosto: balão, citação e história da editora */
+
+
+
+
+/* Ajuste do balão: usar apenas o símbolo, pequeno e discreto */
 .story-balloon {
-  width: 108px;
-  max-height: 150px;
-  margin: 0 auto 24px;
+  width: 34px;
+  height: auto;
+  margin: 0 auto 14px;
+  display: block;
   object-fit: contain;
+  opacity: 0.95;
   transform-origin: 50% 100%;
-  animation: balloon-arrival 1.15s cubic-bezier(.2, .75, .25, 1) both;
+  animation: balloon-arrival 0.9s cubic-bezier(.2, .75, .25, 1) both;
 }
 .quote-author {
   display: block;
@@ -541,27 +547,31 @@ cite {
   letter-spacing: .12em;
   text-transform: uppercase;
 }
-.story-intro {
-  margin: 28px 0 0;
-  padding-top: 22px;
-  border-top: 1px solid rgba(182, 183, 183, .72);
-  color: var(--brown);
-  font-family: "Zilla Slab", Georgia, serif;
-  font-size: 1.18rem;
-  font-weight: 700;
-  line-height: 1.35;
+.about-copy strong {
+  color: var(--blue);
 }
-.about-copy strong { color: var(--blue); }
 @keyframes balloon-arrival {
-  0% { opacity: 0; transform: translateY(18px) scale(.94) rotate(-2deg); }
-  65% { opacity: 1; transform: translateY(-3px) scale(1.01) rotate(.6deg); }
-  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(.94);
+  }
+  100% {
+    opacity: .95;
+    transform: translateY(0) scale(1);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .story-balloon { animation: none; }
+  .story-balloon {
+    animation: none;
+  }
 }
 @media (max-width: 680px) {
-  .story-balloon { width: 92px; margin-bottom: 20px; }
-  .quote { font-size: 1.3rem; }
-  .story-intro { font-size: 1.08rem; }
+  .story-balloon {
+    width: 28px;
+    margin-bottom: 12px;
+  }
+  .quote {
+    font-size: 1.3rem;
+  }
+  
 }
